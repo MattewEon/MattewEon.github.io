@@ -14,6 +14,9 @@ export class AppComponent {
 
 	step: number = 4;
 	max: number = 100;
+	color1 = 33;
+	color2 = 66;
+	color3 = 90;
 
 	stripped: boolean = false;
 	strippedReverse: boolean = false;

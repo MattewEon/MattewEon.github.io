@@ -18,26 +18,30 @@ html, body {
 	background-image: linear-gradient(to right, transparent calc(100% - 2px), rgba(255, 255, 255, 0.25) calc(100% - 2px));
 }
 
-button, select {
+button {
 	border-radius: 2px;
 	border: 1px solid rgba($color, 0.5);
 	background: rgba($color, 0.25);
 	padding: 4px 8px;
 	cursor: pointer;
 }
+
 label[for] { cursor: pointer; }
 
-input {
-	&[type=text], &[type=number] {
-		border: none;
-		background: transparent;
-		border-bottom: 1px solid $color;
-		padding: 0 4px;
-		font-size: 16px;
-		&.small { width: 60px; }
-	}
+.input {
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid $color;
+	padding: 0 4px;
+	font-size: 16px;
+	&.small { width: 50px; }
 }
 
+input {
+	&[type=text], &[type=number] { @extend .input; }
+}
+
+select { @extend .input; }
 
 .example {
 	align-items: center;
@@ -46,6 +50,14 @@ input {
 	background: #d8d8d8;
 	border-radius: 3px;
 	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.7);
+
+	> h3 {
+		font-size: 30px;
+		letter-spacing: 2px;
+		margin: 16px 8px;
+		border-bottom: 1px dashed $color;
+		text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+	}
 
 	> .flex-line > .render { border-width: 0 0 1px 0; }
 	> .flex-col > .render { border-width: 0 1px 0 0; }
@@ -61,8 +73,26 @@ input {
 			border-radius: 3px;
 			border: solid rgba(0, 0, 0, 0.5);
 
-			> .params {
+			> .param-group {
 				padding: 8px 0;
+
+				> .params-label {
+					margin: 0 0 12px 0;
+					font-size: 22px;
+					font-weight: bold;
+					text-decoration: underline;
+				}
+
+				> .params {
+					padding: 6px 0;
+
+					> span {
+						margin: 0 0 0 4px;
+						padding: 0 8px;
+
+						&:not(:last-child) { border-right: 1px dashed; }
+					}
+				}
 
 				> span {
 					border-radius: 2px;
@@ -88,3 +118,8 @@ input {
 	flex-direction: row;
 }
 
+progress-container > progressbar {
+	&.color1 { background-color: #cccc33; }
+	&.color2 { background-color: orangered; }
+	&.color3 { background-color: darkred; }
+}

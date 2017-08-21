@@ -3,25 +3,22 @@
 	<div class="flex-line">
 		<div class="render">
 			<progress-container [class.stepped]="stepped" [step]="step">
-				<progressbar [value]="progressValue" [max]="max" class="{{getCssClass()}}" [progressType]="progressType">
+				<progressbar [value]="progressValue" [max]="max" [color1]="color1" [color2]="color2" [color3]="color3"
+										 [class.stripped]="stripped" [class.stripped-reverse]="strippedReverse" [class.no-animate]="noAnimate"
+										 [progressType]="progressType">
 					<div>this is custom value</div>
 				</progressbar>
 			</progress-container>
 
-			<div class="params">
-				<label>@Input() value :</label>
-				<input type="number" class="small" [(ngModel)]="inputProgressValue" (keyup.enter)="onInputProgressEnter()"/>
-				<button (click)="onInputProgressEnter()">Apply value</button>
-			</div>
-
-			<div class="params">
-				<label>@Input() max :</label>
-				<input type="number" class="small" [(ngModel)]="max" (change)="onInputProgressEnter()"/>
-			</div>
-
-			<div class="params">
-				<label>@Input() progressType :</label>
-				<select [(ngModel)]="progressType" (change)="sendChanges()">
+			<div class="param-group">
+				<div class="params-label">@Input() properties</div>
+				<div class="params">
+					<span>[value]="<input type="number" class="small" [(ngModel)]="inputProgressValue" (keyup.enter)="onInputProgressEnter()"/>"</span>
+					<button (click)="onInputProgressEnter()">Apply value</button>
+				</div>
+				<div class="params">
+					<span class="param">[progressType]="
+						<select [(ngModel)]="progressType" (change)="sendChanges()">
 					<option value="none">none</option>
 					<option value="ng-content">ng-content</option>
 					<option value="value">value</option>
@@ -30,15 +27,18 @@
 					<option value="percent-progressive">percent-progressive</option>
 					<option value="value">value</option>
 				</select>
+						"
+					</span>
+					<span>[max]="<input type="number" class="small" [(ngModel)]="max" (change)="onInputProgressEnter()"/>"</span>
+					<span>[step]="<input type="number" class="small" [(ngModel)]="step" (change)="onInputProgressEnter()"/>"</span>
+					<span>[color1]="<input type="number" class="small" [(ngModel)]="color1" (change)="onInputProgressEnter()"/>"</span>
+					<span>[color2]="<input type="number" class="small" [(ngModel)]="color2" (change)="onInputProgressEnter()"/>"</span>
+					<span>[color3]="<input type="number" class="small" [(ngModel)]="color3" (change)="onInputProgressEnter()"/>"</span>
+				</div>
 			</div>
 
-			<div class="params">
-				<label>@Input() step :</label>
-				<input type="number" class="small" [(ngModel)]="step" (change)="sendChanges()"/>
-			</div>
-
-			<div class="params">
-				<label>Classes : </label>
+			<div class="param-group">
+				<div class="params-label">Css classes</div>
 				<span>
 					<input type="checkbox" id="stepped" [(ngModel)]="stepped" (click)="sendChanges()">
 					<label for="stepped">progress-container.stepped</label>
@@ -59,11 +59,18 @@
 		</div>
 	</div>
 	<prism-highlight [showLines]="true" language="markup" theme="darkula" [obs]="$obs">
-		&lt;progress-container {{ stepped ? 'class="stepped" ' : ''}}>
-			&lt;progressbar [value]="'{{ progressValue }}'" {{ getCssClassAttribute() }} [progressType]="'{{progressType}}'">
+		&lt;progress-container [step]="'{{step}}'"{{ stepped ? 'class="stepped" ' : ''}}>
+			&lt;progressbar [value]="'{{ progressValue }}'" [max]="'{{max}}'" {{ getCssClassAttribute() }} [progressType]="'{{progressType}}'">
 				&lt;div>this is custom value&lt;/div>
 			&lt;/progressbar>
 		&lt;/progres-container>
+	</prism-highlight>
+	<prism-highlight [showLines]="true" language="scss" theme="darkula">
+		progress-container > progressbar {{ '{' }}
+			&.color1 {{ '{' }} background-color: #cccc33; }
+			&.color2 {{ '{' }} background-color: orangered; }
+			&.color3 {{ '{' }} background-color: darkred; }
+		}
 	</prism-highlight>
 </div>
 
