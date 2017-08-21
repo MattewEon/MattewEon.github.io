@@ -1,0 +1,80 @@
+<div class="example line" id="ex1">
+	<h3>Progressbar : dynamic example</h3>
+	<div class="flex-line">
+		<div class="render">
+			<progress-container [class.stepped]="stepped" [step]="step">
+				<progressbar [value]="progressValue" [max]="max" class="{{getCssClass()}}" [progressType]="progressType">
+					<div>this is custom value</div>
+				</progressbar>
+			</progress-container>
+
+			<div class="params">
+				<label>@Input() value :</label>
+				<input type="number" class="small" [(ngModel)]="inputProgressValue" (keyup.enter)="onInputProgressEnter()"/>
+				<button (click)="onInputProgressEnter()">Apply value</button>
+			</div>
+
+			<div class="params">
+				<label>@Input() max :</label>
+				<input type="number" class="small" [(ngModel)]="max" (change)="onInputProgressEnter()"/>
+			</div>
+
+			<div class="params">
+				<label>@Input() progressType :</label>
+				<select [(ngModel)]="progressType" (change)="sendChanges()">
+					<option value="none">none</option>
+					<option value="ng-content">ng-content</option>
+					<option value="value">value</option>
+					<option value="value-progressive">value-progressive</option>
+					<option value="percent">percent</option>
+					<option value="percent-progressive">percent-progressive</option>
+					<option value="value">value</option>
+				</select>
+			</div>
+
+			<div class="params">
+				<label>@Input() step :</label>
+				<input type="number" class="small" [(ngModel)]="step" (change)="sendChanges()"/>
+			</div>
+
+			<div class="params">
+				<label>Classes : </label>
+				<span>
+					<input type="checkbox" id="stepped" [(ngModel)]="stepped" (click)="sendChanges()">
+					<label for="stepped">progress-container.stepped</label>
+				</span>
+				<span>
+					<input type="checkbox" id="stripped" [(ngModel)]="stripped" (click)="sendChanges()">
+					<label for="stripped">progressbar.stripped</label>
+				</span>
+				<span>
+					<input type="checkbox" id="strippedReverse" [(ngModel)]="strippedReverse" (click)="sendChanges()">
+					<label for="strippedReverse">progressbar.stripped-reverse</label>
+				</span>
+				<span>
+					<input type="checkbox" id="noAnimate" [(ngModel)]="noAnimate" (click)="sendChanges()">
+					<label for="noAnimate">progressbar.no-animate</label>
+				</span>
+			</div>
+		</div>
+	</div>
+	<prism-highlight [showLines]="true" language="markup" theme="darkula" [obs]="$obs">
+		&lt;progress-container {{ stepped ? 'class="stepped" ' : ''}}>
+			&lt;progressbar [value]="'{{ progressValue }}'" {{ getCssClassAttribute() }} [progressType]="'{{progressType}}'">
+				&lt;div>this is custom value&lt;/div>
+			&lt;/progressbar>
+		&lt;/progres-container>
+	</prism-highlight>
+</div>
+
+<div class="example" id="ex2">
+	<h3>Dynamic example</h3>
+	<div class="flex-col">
+		<div class="render">
+			<radial-progress value="32"></radial-progress>
+		</div>
+		<prism-highlight [showLines]="true" language="markup" theme="darkula">
+			&lt;radial-progress value="32">&lt;/radial-progress>
+		</prism-highlight>
+	</div>
+</div>

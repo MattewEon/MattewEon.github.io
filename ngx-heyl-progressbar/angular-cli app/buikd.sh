@@ -1,0 +1,1 @@
+ng build --prod --base-href "https://MattewEon.github.io/ngx-heyl-progressbar/"
