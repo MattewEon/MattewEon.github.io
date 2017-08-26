@@ -1,0 +1,92 @@
+<div class="example" id="ex1">
+	<h3>Progressbar : dynamic example</h3>
+
+	<div class="demo flex-line">
+		<div class="result">
+			<progress-container [class.stepped]="stepped" [step]="step">
+				<progressbar [value]="progressValue" [max]="max" [color1]="color1" [color2]="color2" [color3]="color3"
+										 [class.stripped]="stripped" [class.stripped-reverse]="strippedReverse" [class.no-animate]="noAnimate"
+										 [progressType]="progressType">
+					<div>this is custom value</div>
+				</progressbar>
+			</progress-container>
+		</div>
+		<div class="result-config">
+			<div class="param-group">
+				<div class="params-label">@Input() properties</div>
+				<div class="param">
+					<div class="param-name">value (press enter to save)</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="inputProgressValue" (keyup.enter)="onInputProgressEnter()"></div>
+				</div>
+				<div class="param">
+					<div class="param-name">progress-type</div>
+					<div class="param-value">
+						<select [(ngModel)]="progressType" (change)="sendChanges()">
+							<option value="none">none</option>
+							<option value="ng-content">ng-content</option>
+							<option value="value">value</option>
+							<option value="value-progressive">value-progressive</option>
+							<option value="percent">percent</option>
+							<option value="percent-progressive">percent-progressive</option>
+							<option value="value">value</option>
+						</select>
+					</div>
+				</div>
+				<div class="param">
+					<div class="param-name">max</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="max" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">step</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="step" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color1</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color1" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color2</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color2" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color3</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color3" (change)="onInputProgressEnter()"/></div>
+				</div>
+			</div>
+
+			<div class="param-group">
+				<div class="params-label">Css classes</div>
+				<span>
+					<input type="checkbox" id="stepped" [(ngModel)]="stepped" (click)="sendChanges()">
+					<label for="stepped">progress-container.stepped</label>
+				</span>
+				<span>
+					<input type="checkbox" id="stripped" [(ngModel)]="stripped" (click)="sendChanges()">
+					<label for="stripped">progressbar.stripped</label>
+				</span>
+				<span>
+					<input type="checkbox" id="strippedReverse" [(ngModel)]="strippedReverse" (click)="sendChanges()">
+					<label for="strippedReverse">progressbar.stripped-reverse</label>
+				</span>
+				<span>
+					<input type="checkbox" id="noAnimate" [(ngModel)]="noAnimate" (click)="sendChanges()">
+					<label for="noAnimate">progressbar.no-animate</label>
+				</span>
+			</div>
+		</div>
+		<prism-highlight [showLines]="true" language="markup" theme="darkula" [obs]="$obs">
+		&lt;progress-container [step]="'{{step}}'"{{ stepped ? ' class="stepped" ' : ''}}>
+			&lt;progressbar [value]="'{{ progressValue }}'" [max]="'{{max}}'" {{ getCssClassAttribute() }} [progressType]="'{{progressType}}'" [color1]="'{{color1}}'" [color2]="'{{color2}}'" [color3]="'{{color3}}'">
+				&lt;div>this is custom value&lt;/div>
+			&lt;/progressbar>
+		&lt;/progres-container>
+	</prism-highlight>
+		<prism-highlight [showLines]="true" language="scss" theme="darkula">
+		progress-container > progressbar {{ '{' }}
+			&.color1 {{ '{' }} background-color: #cccc33; }
+			&.color2 {{ '{' }} background-color: orangered; }
+			&.color3 {{ '{' }} background-color: darkred; }
+		}
+	</prism-highlight>
+	</div>
+</div>

@@ -1,0 +1,76 @@
+<div class="example" id="ex1">
+	<h3>radial-progress : dynamic example</h3>
+
+	<div class="demo flex-line">
+		<div class="result">
+			<radial-progress [value]="progressValue" [max]="max" [color1]="color1" [color2]="color2" [color3]="color3"
+										 [progressType]="progressType" [class.squared]="squared">
+					<div class="pre-text">Score :</div>
+					<div class="text">custom</div>
+			</radial-progress>
+		</div>
+		<div class="result-config">
+			<div class="param-group">
+				<div class="params-label">@Input() properties</div>
+				<div class="param">
+					<div class="param-name">value (press enter to save)</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="inputProgressValue" (keyup.enter)="onInputProgressEnter()"></div>
+				</div>
+				<div class="param">
+					<div class="param-name">progress-type</div>
+					<div class="param-value">
+						<select [(ngModel)]="progressType" (change)="sendChanges()">
+							<option value="none">none</option>
+							<option value="ng-content">ng-content</option>
+							<option value="value">value</option>
+							<option value="value-progressive">value-progressive</option>
+							<option value="percent">percent</option>
+							<option value="percent-progressive">percent-progressive</option>
+							<option value="value">value</option>
+						</select>
+					</div>
+				</div>
+				<div class="param">
+					<div class="param-name">max</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="max" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color1</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color1" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color2</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color2" (change)="onInputProgressEnter()"/></div>
+				</div>
+				<div class="param">
+					<div class="param-name">color3</div>
+					<div class="param-value"><input type="number" class="small" [(ngModel)]="color3" (change)="onInputProgressEnter()"/></div>
+				</div>
+			</div>
+
+			<div class="param-group">
+				<div class="params-label">Css classes</div>
+				<span>
+					<input type="checkbox" id="squared" [(ngModel)]="squared" (click)="sendChanges()">
+					<label for="squared">radial-progress.squared</label>
+				</span>
+			</div>
+		</div>
+		<prism-highlight [showLines]="true" language="markup" theme="darkula" [obs]="$obs">
+			&lt;radial-progress [value]="'{{ progressValue }}'" [max]="'{{max}}'" {{ squared ? "class=\"squared\"" : "" }} [progressType]="'{{progressType}}'" [color1]="'{{color1}}'" [color2]="'{{color2}}'" [color3]="'{{color3}}'">
+				&lt;div class="pre-text">Score :&lt;/div>
+				&lt;div class="text">custom&lt;/div>
+			&lt;/radial-progress>
+		</prism-highlight>
+		<prism-highlight [showLines]="true" language="scss" theme="darkula">
+			radial-progress &#123;
+				color: #fff;
+
+				&.default .fill &#123; background-color: darkred; }
+				&.color1 .fill &#123; background-color: #DD2C00; }
+				&.color2 .fill &#123; background-color: orangered; }
+				&.color3 .fill &#123; background-color: green; }
+			}
+		</prism-highlight>
+	</div>
+</div>

@@ -2,7 +2,6 @@
 prism-highlight {
 	display: block;
 	position: relative;
-	margin: 1em 0;
 
 	&:before {
 		content: attr(language);
