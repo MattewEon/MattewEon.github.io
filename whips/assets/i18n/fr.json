@@ -46,7 +46,7 @@
         "strand-drop-order": "Ordre des chutes",
         "left-strand-drop-order": "Ordre des chutes à gauche",
         "right-strand-drop-order": "Ordre des chutes à droite",
-        "strand": "brin"
+        "strand": "Brin"
       },
       "template": {
         "local-configurations": "Configurations locales",
