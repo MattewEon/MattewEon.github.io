@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "whips": "Fouets",
+    "color-chart": "Nuancier",
+    "simulator": "Simulateur",
+    "contact": "Contact",
+    "back": "Retour"
+  },
+  "home": {
+    "by": "Par",
+    "french-makers": "ARTISANS FRANÇAIS DE FOUETS ET OBJETS EN PARACORDE"
+  },
+  "color-chart": {
+    "paragraph-1": "Voici la liste des couleurs de paracorde avec lesquelles nous avons déjà travaillé avec nos créations associées. Cela vous permettra de mieux vous représenter les différents rendus possibles.",
+    "paragraph-2.1": "Il existe une multitude d'autres couleurs. Si celle que vous souhaitez ne se trouve pas dans cette liste, n'hésitez pas à ",
+    "contact-us": "nous contacter",
+    "paragraph-2.2": " pour vous renseigner et vous accompagner dans votre projet.",
+    "white": "Les Blancs",
+    "yellow": "Les Jaunes",
+    "orange": "Les Oranges",
+    "reds": "Les Rouges",
+    "pink": "Les Roses",
+    "purple": "Les Violets",
+    "blue": "Les Bleus",
+    "green": "Les Verts",
+    "brown": "Les Bruns",
+    "grey": "Les Gris",
+    "black": "Les Noirs",
+    "element": {
+      "creations": "Création(s)",
+      "view": "VOIR"
+    }
+  },
+  "simulator": {
+    "drop": "Chute",
+    "configuration": {
+      "save-as-png": "Enregistrer en PNG",
+      "threads": "Fils",
+      "colors": "Couleurs",
+      "templates": "Modèles",
+      "facing-colors": "Couleurs face-à-face",
+      "color": {
+        "order": "Ordre des couleurs",
+        "left-order": "Ordre des couleurs à gauche",
+        "right-order": "Ordre des couleurs à droite",
+        "strand-drop-order": "Ordre des chutes",
+        "left-strand-drop-order": "Ordre des chutes à gauche",
+        "right-strand-drop-order": "Ordre des chutes à droite",
+        "strand": "brin"
+      },
+      "template": {
+        "local-configurations": "Configurations locales",
+        "default-configurations": "Configurations par défaut",
+        "update" : "Enregistrer",
+        "delete": "Supprimer",
+        "save-as": "Sauvegarder ...",
+        "saving-configuration": "Enregistrement de la configuration",
+        "name-it": "La configuration actuelle sera enregistrée en local. Merci de lui donner un nom avant l'enregistrement.",
+        "configuration-name": "Nom de la configuration",
+        "cancel": "Annuler",
+        "ok": "Ok",
+        "delete-configuration": "Suppression de configuration",
+        "delete-it": "Vous êtes sur le point de supprimer la configuration"
+      }
+    }
+  },
+  "contact-page": {
+    "title": "Nous serons ravis de répondre à vos questions",
+    "subtitle": "Que ce soit pour vous guider sur votre projet ou passer une commande, n'hésitez plus ! Nous sommes disponibles pour vous, et vous remercions pour l'intérêt que vous nous portez.",
+    "etsy": {
+      "description": "Visitez notre boutique, parcourez nos réalisations et trouvez l'inspiration qui rendra votre commande parfaitement à votre image !",
+      "follow": "Visitez notre boutique"
+    },
+    "instagram": {
+      "description": "Découvrez-nous au fil du temps, et soyez les premiers au courant de nos nouveaux projets. Nous adorons partager quotidiennement avec nos followers !",
+      "follow": "Suivez-nous sur Instagram"
+    },
+    "email": {
+      "description": "Échangez sur votre projet avec nous, et laissez-nous vous aiguiller sur les détails qui vous correspondront le mieux !",
+      "follow": "Contactez-nous par e-mail"
+    }
+  },
+  "footer": {
+    "contact": "NOUS CONTACTER"
+  }
+}
