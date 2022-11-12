@@ -12,6 +12,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <body>
   <script>
+    if (localStorage.getItem('local-configurations')) {
+      alert(localStorage.getItem('local-configurations'));
+    }
     let href = location.href;
     href = href.replace('matteweon.github.io/whips', 'eons-whips.vercel.app');
     href = href.replace('#/', '');
