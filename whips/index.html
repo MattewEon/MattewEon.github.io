@@ -13,12 +13,14 @@
 <body>
   <script>
     if (localStorage.getItem('local-configurations')) {
+      alert('The website has moved to https://eons-whips.vercel.app . You are not automatically redirected because you have local configurations saved');
       alert(localStorage.getItem('local-configurations'));
+    } else {
+      let href = location.href;
+      href = href.replace('matteweon.github.io/whips', 'eons-whips.vercel.app');
+      href = href.replace('#/', '');
+      location.href = href;
     }
-    let href = location.href;
-    href = href.replace('matteweon.github.io/whips', 'eons-whips.vercel.app');
-    href = href.replace('#/', '');
-    location.href = href;
   </script>
 </body>
 </html>
